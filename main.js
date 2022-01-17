@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
+const { Client, Intents } = require('discord.js');
 
-const client = new Discord.Client();
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 
 client.once('ready', () => {
@@ -10,8 +10,7 @@ client.once('ready', () => {
 
 
 
-
-
+var json = require("./token.json");
 
 // last line of the file
-client.login('OTMyNjYyMDExMDYwNDIwNjY4.YeWPLw.aq8SHborla81YU-wSwr1iTO7HYc');
+client.login(json.discord_token);
